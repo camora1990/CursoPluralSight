@@ -10,7 +10,6 @@ namespace ACM_Acme_Customer_Management_.BLL
         {
 
         }
-
         public Address(int addressId) => (AddressId) = (addressId);
 
         public int AddressId { get; private set; }

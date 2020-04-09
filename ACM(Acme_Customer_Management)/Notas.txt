@@ -59,4 +59,18 @@ que la nueva clase se encargue de esto.
 
 cohesion: es que tan relacionados estan los datoso mienbros de una clase con el proposito de la clase, para aunmentar la cohesion
 extraiga mienmbros no relacionados en sus propias clases, minimizar la cohesion hace que una aplicacion sea mas facil de entender
-probar y mantener ya que esta esta enfocada en un unico proposito
+probar y mantener ya que esta esta enfocada en un unico proposito.
+
+
+Tipos de relaciones:
+
+hay tres tipos de relaciones 
+1. colaboration o Uses a: es donde un objeto usa o colabora con otro que no esta relacionado de otra manera los repositories
+son un ejemplo claro de estos pues son metodos que se implementan enn la clase para obtener datos y llamdos a bases de datos 	
+2. composition or "has a" : define la relacion en la que un objeto esta compuesto de otro objeto
+estas se divide en 2.
+2.1 aggregation : un objeto se compone de varios objetos que pueden existir fuera de la ralcion.
+2.2 composition: los objetos relacionados no exixten de otra manera es decir si un objeto esta relacionado con otros objetos pero este se destruye los demas tambien se destruyen
+3. inheritance ( is a): es la relacion que herada todos los atributos y metodos de otro objeto.
+
+Encadenamiento de constructores : cuando tienes dos constructores uno que no recibe parametros y otro que si y tienes por ejemplo que inicializar una lista en los dos puedes utilizar : this(parametro predeterminado) en el constructor que no recibe parametros y este automaticamente inicializa el otro constructor

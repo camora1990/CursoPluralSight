@@ -1,11 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ACM_Acme_Customer_Management_.BLL
 {
     public class CustomerRepository
     {
+        public CustomerRepository()
+        {
+            addressRepository = new AddressRepository();
+        }
+
+        private AddressRepository addressRepository { get; set; }
+
         /// <summary>
         /// Guarda el cliente Actual.
         /// </summary>
@@ -29,6 +37,7 @@ namespace ACM_Acme_Customer_Management_.BLL
                 customer.EmailAddress = "camilo@correo.com";
                 customer.FirtsName = "CAMILO";
                 customer.LastName = "MORALES";
+                customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
             }
             return customer;
         }

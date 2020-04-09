@@ -54,6 +54,5 @@ namespace ACM_Acme_Customer_Management_.BLL
             if (ProductId <= 0) isValid = false;
             return isValid;
         }
-
     }
 }

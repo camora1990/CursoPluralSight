@@ -6,12 +6,14 @@ namespace ACM_Acme_Customer_Management_.BLL
     //Clase cliente
     public class Customer
     {
-        public Customer()
+        //Encademaniento de constructores su usa This
+        public Customer() : this(0)
         {
 
         }
-        public Customer(int customeId) => (CustomerId) = (customeId);
-     
+        public Customer(int customeId) => (CustomerId, AddressList) = (customeId, new List<Address>());
+
+        public List<Address> AddressList { get; set; }
         public int CustomerId { get; private set; }
         public string FirtsName { get; set; }
         public string LastName { get; set; }

@@ -22,7 +22,6 @@ namespace ACM.BLLTest
             //-- Act (Actuar)
             string actual = customer.FullName;
 
-
             //-- Assert (Asignar)
             Assert.AreEqual(expected, actual);
         }
@@ -34,13 +33,11 @@ namespace ACM.BLLTest
             Customer customer = new Customer
             {
                 LastName = "MORALES",
-   
             };
             string expected = "MORALES";
 
             //-- Act (Actuar)
             string actual = customer.FullName;
-
 
             //-- Assert (Asignar)
             Assert.AreEqual(expected, actual);
@@ -53,18 +50,15 @@ namespace ACM.BLLTest
             Customer customer = new Customer
             {
                 FirtsName= "CAMILO",
-
             };
             string expected = "CAMILO";
 
             //-- Act (Actuar)
             string actual = customer.FullName;
 
-
             //-- Assert (Asignar)
             Assert.AreEqual(expected, actual);
         }
-
 
         [TestMethod]
         public void Statictest()
@@ -87,7 +81,6 @@ namespace ACM.BLLTest
             //-- Act (Actuar)
             int actual = Customer.InstanceCount;
 
-
             //-- Assert (Asignar)
             Assert.AreEqual(expected, actual);
         }
@@ -104,12 +97,10 @@ namespace ACM.BLLTest
                 LastName = "MORALES",
                 EmailAddress = "morales@correo.com"
             };
-      
             var expected = true;
 
             //-- Act (Actuar)
             var actual = custome1.Validate();
-
 
             //-- Assert (Asignar)
             Assert.AreEqual(expected, actual);
@@ -124,12 +115,10 @@ namespace ACM.BLLTest
             {
                 EmailAddress = "morales@correo.com"
             };
-
             var expected = false;
 
             //-- Act (Actuar)
             var actual = custome1.Validate();
-
 
             //-- Assert (Asignar)
             Assert.AreEqual(expected, actual);
