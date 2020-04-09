@@ -1,0 +1,62 @@
+Notas Curso C#
+
+para crear las pruebas en la solucion creamos una carpeta independiente en la solucion.
+
+1- click derecho en la solucion click en Add new folder solution
+2- click derecho en la carpeta creada anteriormente add new proyect 
+3- Buscamos UnitTestProject(.Net Framewor) para nombralo lo nombramos con el nombre del proyecto que vamos a testear
+4- luego de creado el proyecto de test hacemos referencia a la solucion a la que se le aplicara el test.
+5- las clases se nombrar con el mismo nombre de clase a la que se le hara el test terminada con test 
+ejm: CustomerTest
+6- nombramos los metos que vamos a testear ejemplo.
+
+elmetodo que se va utilizar es organizar actuar y asignar
+  public void FullNameTestValid()
+        {
+            //-- Arrange (Organizar)
+	    // creamos la instacia de la clase a la qu vamos a probar	
+            Customer customer = new Customer
+            {
+                FirtsName = "Camilo",
+                LastName ="Morales"
+            };
+
+	    //Aca ponemos lo que esperamso que salga
+            string expected = "CAMILO, MORALES";
+
+            //-- Act (Actuar)
+	    //aca lo que realmente esta saliendo
+            string actual = customer.FullName;
+
+
+            //-- Assert (Asignar)
+	    //aca comparamos si lo que esta saliendo es igual a lo esperado
+            Assert.AreEqual(expected, actual);
+        }
+
+para correr el  test damos test test explorer
+
+
+
+la mayoria de apliacciones de didviden minimo en 3 capas
+
+User Interface
+BLL (bussines layer logic)
+Data Access
+common library (Libreria de datos comun)
+
+las clases deben tener una unica responsabilidad, por ejemplo si nuestra clase esta guardando datos en las bases de datos
+hay que delegar esta responsabilidad a otra clase que se encargue de esto, a esta clase se le puede llamar clase repository
+en los ptrones de diseño este se llama patron de repositorio.
+
+acoplamiento de clases y cohesion
+
+Acoplamiento: es el grado en el que las clases depende de otras clases o recursos externos, para reducir el acoplamiento 
+extraiga dependencias en sus propias clases, reducir el acoplamieto hace que una clase sea mas facil de mantener probar
+por que las dependencias estan encapsuladas, por ejemplo cuando en su clase se tienen metosos para cuardar y recuperar 
+un dato que tenga que acceder a base de datos se crea una clase repository para quitar esa responsabilidad a la clase y
+que la nueva clase se encargue de esto.
+
+cohesion: es que tan relacionados estan los datoso mienbros de una clase con el proposito de la clase, para aunmentar la cohesion
+extraiga mienmbros no relacionados en sus propias clases, minimizar la cohesion hace que una aplicacion sea mas facil de entender
+probar y mantener ya que esta esta enfocada en un unico proposito

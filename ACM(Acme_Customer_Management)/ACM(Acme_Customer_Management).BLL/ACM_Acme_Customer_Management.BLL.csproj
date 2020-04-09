@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>ACM_Acme_Customer_Management_.BLL</RootNamespace>
+  </PropertyGroup>
+
+</Project>
