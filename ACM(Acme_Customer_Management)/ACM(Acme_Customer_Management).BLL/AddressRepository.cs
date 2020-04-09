@@ -76,7 +76,26 @@ namespace ACM_Acme_Customer_Management_.BLL
         /// <returns></returns>
         public bool Save(Address address)
         {
-            return true;
+            var succes = true;
+            if (address.HasChanges)
+            {
+                if (address.IsValid)
+                {
+                    if (address.IsNew)
+                    {
+                        //llamar a un procedimiento almacenado de inserción
+                    }
+                    else
+                    {
+                        //llamar a un procedimiento de actualizacion
+                    }
+                }
+                else
+                {
+                    succes = false;
+                }
+            }
+            return succes;
         }
     }
 }

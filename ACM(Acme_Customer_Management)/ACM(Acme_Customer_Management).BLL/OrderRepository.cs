@@ -27,7 +27,26 @@ namespace ACM_Acme_Customer_Management_.BLL
         /// <returns></returns>
         public bool Save(Order order)
         {
-            return true;
+            var success = true;
+            if (order.HasChanges)
+            {
+                if (order.IsValid)
+                {
+                    if (order.IsNew)
+                    {
+                        //llamar a un procedimiento almacenado de inserción
+                    }
+                    else
+                    {
+                        //llamar a un procedimiento de actualizacion
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
     }
 }

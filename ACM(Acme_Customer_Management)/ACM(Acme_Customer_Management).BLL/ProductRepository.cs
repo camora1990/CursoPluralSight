@@ -30,7 +30,27 @@ namespace ACM_Acme_Customer_Management_.BLL
         /// <returns></returns>
         public bool Save(Product product)
         {
-            return true;
+            var success = true;
+            if(product.HasChanges)
+            {
+                if(product.IsValid)
+                {
+                    if(product.IsNew)
+                    {
+                        //llamar a un procedimiento almacenado de inserción
+                    }
+                    else
+                    {
+                        //llamar a un procedimiento de actualizacion
+                    }
+                }else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
+
+       
     }
 }

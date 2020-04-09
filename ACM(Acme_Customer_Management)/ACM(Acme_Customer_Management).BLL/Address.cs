@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM_Acme_Customer_Management_.BLL
 {
-    public class Address
+    public class Address : EntityBase
     {
         public Address()
         {
@@ -25,7 +25,7 @@ namespace ACM_Acme_Customer_Management_.BLL
         /// Valida datos de la direccion
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
             if (string.IsNullOrEmpty(City)) isValid = false;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM_Acme_Customer_Management_.BLL
 {
-    public class Product
+    public class Product : EntityBase
     {
 
         public Product() { }
@@ -19,7 +19,7 @@ namespace ACM_Acme_Customer_Management_.BLL
         /// Retorna si es valido la craecion del Product
         /// </summary>
         /// <returns></returns>
-        public bool Validated()
+        public override bool Validate()
         {
             var isValid = true;
             if (string.IsNullOrEmpty(ProductName)) isValid = false;
@@ -27,5 +27,9 @@ namespace ACM_Acme_Customer_Management_.BLL
 
             return isValid;
         }
+
+        public override string ToString() => ProductName;
+
+       
     }
 }

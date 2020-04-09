@@ -15,7 +15,8 @@ namespace ACM.BLLTest
             var customerRepository = new CustomerRepository();
             var expected = new Customer(1)
             {
-                EmailAddress = "camilo@correo.com",
+                EmailAddress = "camilo@correo.com" +
+                "",
                 FirtsName = "CAMILO",
                 LastName = "MORALES"
             };
@@ -81,7 +82,50 @@ namespace ACM.BLLTest
                 Assert.AreEqual(expected.AddressList[i].StrestLine1, actual.AddressList[i].StrestLine1);
                 Assert.AreEqual(expected.AddressList[i].StrestLine2, actual.AddressList[i].StrestLine2);
             }
-           
+        }
+
+        /// <summary>
+        ///  Prueba cuando un correo y apellido son correctos
+        /// </summary>
+        [TestMethod]
+        public void SaveTestCustomer()
+        {
+            //-- Arrange (Organizar)
+            var customerRepository = new CustomerRepository();
+            var updateCustomer = new Customer(1)
+            {
+                EmailAddress = "correo@morales.com",
+                LastName = "Morales",
+                HasChanges = true
+            };
+
+            //-- Act (Actuar)
+            var actual = customerRepository.Save(updateCustomer);
+
+            //-- Assert (Asignar)
+            Assert.AreEqual(true, actual);
+        }
+
+        /// <summary>
+        /// prueba cuando una orden date es null
+        /// </summary>
+        [TestMethod]
+        public void SaveTestValid()
+        {
+            //-- Arrange (Organizar)
+            var customerRepository = new CustomerRepository();
+            var updateCustomer = new Customer(1)
+            {
+                EmailAddress = "correo@morales.com",
+                
+                HasChanges = true
+            };
+
+            //-- Act (Actuar)
+            var actual = customerRepository.Save(updateCustomer);
+
+            //-- Assert (Asignar)
+            Assert.AreEqual(false, actual);
 
         }
     }

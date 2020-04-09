@@ -20,7 +20,26 @@ namespace ACM_Acme_Customer_Management_.BLL
         /// <returns></returns>
         public bool Save(Customer customer)
         {
-            return true;
+            var success = true;
+            if (customer.HasChanges)
+            {
+                if (customer.IsValid)
+                {
+                    if (customer.IsNew)
+                    {
+                        //llamar a un procedimiento almacenado de inserción
+                    }
+                    else
+                    {
+                        //llamar a un procedimiento de actualizacion
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
 
         /// <summary>
