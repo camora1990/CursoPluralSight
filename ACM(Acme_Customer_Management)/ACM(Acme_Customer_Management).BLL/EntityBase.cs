@@ -8,7 +8,7 @@ namespace ACM_Acme_Customer_Management_.BLL
     {
         Active,
         Deleted
-    }
+    }   
     public abstract class EntityBase
     {
         public bool IsNew { get; private set; }

@@ -5,4 +5,8 @@
     <RootNamespace>ACM_Acme_Customer_Management_.BLL</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ACME.Common\ACME.Common.csproj" />
+  </ItemGroup>
+
 </Project>
